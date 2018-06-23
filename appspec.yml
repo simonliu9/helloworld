@@ -14,3 +14,11 @@ hooks:
       timeout: 30
   ValidateService:
     - location: scripts/validate.sh
+  AfterInstall: 
+    - location: scripts/setversion.sh 
+      timeout: 180 
+  - source: conf/logrotate 
+    destination: /etc/logrotate.d/helloworld 
+  - source: node_modules 
+    destination: /usr/local/helloworld/node_modules 
+
